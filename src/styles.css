@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* src/styles.css - Global Styles for the entire application */
+
+/* CSS Variables for a consistent color palette */
+:root {
+  --primary-color: #0056b3; /* Darker Blue */
+  --secondary-color: #007bff; /* Main Blue */
+  --background-light: #e9f5ff; /* Very Light Blue */
+  --background-dark: #f4f8fb; /* Light Blue */
+  --text-dark: #2c3e50; /* Dark Charcoal */
+  --text-light: #ecf0f1; /* Light Gray */
+  --border-color: #d1e3f8; /* Light Blue Border */
+  --card-background: #ffffff; /* White */
+}
+
+/* Global body styles to set the base font and background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Base styles for headings and links to ensure consistency */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
