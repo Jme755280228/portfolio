@@ -3,6 +3,8 @@
 /* src/styles.css - Global Styles for the entire application */
 
 /* CSS Variables for a consistent color palette */
+
+@import "@fortawesome/fontawesome-free/css/all.css";
 :root {
   --primary-color: #0056b3; /* Darker Blue */
   --secondary-color: #007bff; /* Main Blue */

@@ -1,3 +1,31 @@
+<nav class="navbar">
+  <div class="navbar-center">
+    <a href="#" class="brand-link">
+      <img src="assets/images/profile.jpg" alt="Logo">
+      My Portfolio
+    </a>
+  </div>
+  <button class="menu-toggle-btn" (click)="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+
+<div class="menu-popup" [ngClass]="{'open': isMenuOpen}">
+  <div class="menu-header">
+    <button class="close-btn" (click)="toggleMenu()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="menu-content">
+    <ul class="menu-links">
+      <li><a href="#about" (click)="toggleMenu()">About</a></li>
+      <li><a href="#projects" (click)="toggleMenu()">Projects</a></li>
+      <li><a href="#skills" (click)="toggleMenu()">Skills</a></li>
+      <li><a href="#contact" (click)="toggleMenu()">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
 <main class="portfolio-container">
   <header class="header">
     <div class="header-content">
@@ -8,26 +36,30 @@
     </div>
   </header>
 
-  <section class="section">
+  <section id="projects" class="section">
     <h2>My Projects</h2>
-    <div class="projects-grid">
-      @for (project of projects; track project.id) {
-        <div class="project-card">
-          <img [src]="project.image" alt="{{ project.name }}" class="project-image">
-          <h3>{{ project.name }}</h3>
-          <p>{{ project.description }}</p>
-          <div class="technologies">
-            @for (tech of project.technologies; track tech) {
-              <span class="tech-tag">{{ tech }}</span>
-            }
+    <div class="projects-scroll-container">
+      <div class="projects-grid">
+        @for (project of projects; track project.id) {
+          <div class="project-card">
+            <img [src]="project.image" alt="{{ project.name }}" class="project-image">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+            <div class="technologies-scroll-container">
+              <div class="technologies">
+                @for (tech of project.technologies; track tech) {
+                  <span class="tech-tag">{{ tech }}</span>
+                }
+              </div>
+            </div>
+            <a [href]="project.link" class="project-link" target="_blank">View Project</a>
           </div>
-          <a [href]="project.link" class="project-link" target="_blank">View Project</a>
-        </div>
-      }
+        }
+      </div>
     </div>
   </section>
 
-  <section class="section">
+  <section id="skills" class="section">
     <h2>My Skills</h2>
     <div class="skills-list">
       @for (skill of skills; track skill) {
@@ -36,7 +68,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="contact" class="section">
     <h2>Contact Me</h2>
     <div class="contact-info">
       <p><strong>Email:</strong> <a [href]="'mailto:' + contact.email">{{ contact.email }}</a></p>
