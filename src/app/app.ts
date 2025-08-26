@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class AppComponent {
+export class App {
   isMenuOpen = false;
 
   user = {
